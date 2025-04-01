@@ -12,7 +12,7 @@ def extract_message(image_path):
     
     height, width, _ = image.shape
     
-    binary_message = ""
+    embeded_message = "original"
     extracted_messages = []
     count = 0
     
@@ -31,6 +31,9 @@ def extract_message(image_path):
                 row += 1
             
             extracted_message = ''.join(chr(int(extracted_binary[i:i+8], 2)) for i in range(0, len(extracted_binary), 8))
+            # Check if the extraced message is the embeded message
+            if extracted_message != embeded_message:
+                return extracted_messages,count
             extracted_messages.append(extracted_message)
             count += 1
     
@@ -38,7 +41,7 @@ def extract_message(image_path):
 
 if __name__ == '__main__':
     # Extract the hidden messages
-    extracted_messages, count = extract_message("./lion_water_marked.png")
+    extracted_messages, count = extract_message("./lion.png")
     
     # Verify the count
     expected_count = 21483
