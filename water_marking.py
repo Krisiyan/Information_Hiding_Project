@@ -48,4 +48,4 @@ def encode_lsb(image_path, output_path):
 if __name__ == '__main__':
     
     # Call the function to embed both messages in the color image
-    encode_lsb("./lion.png", "./lion_water_marked.png")
+    encode_lsb("./sourceimg/src4.png", "./w4.png")

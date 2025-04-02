@@ -41,10 +41,10 @@ def extract_message(image_path):
 
 if __name__ == '__main__':
     # Extract the hidden messages
-    extracted_messages, count = extract_message("./lion.png")
+    extracted_messages, count = extract_message("./watermarked/w4.png")
     
     # Verify the count
-    expected_count = 21483
+    expected_count = 63744
     if count == expected_count:
         print("All water marks are in place. No alternation detected.")
     else:
